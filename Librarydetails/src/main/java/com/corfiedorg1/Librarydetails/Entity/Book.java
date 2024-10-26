@@ -14,23 +14,20 @@ import java.time.LocalDate;
 @Table(name = "Books")
 public class Book {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="Book_Id" ,nullable=false)
     private Long Book_Id;
+    @Column(name="title",nullable = false)
     private String title;
+    @Column(name="author",nullable = false)
     private String author;
+    @Column(name="genre",nullable = false)
     private String genre;
     @Column(name = "is_borrowed")
     private boolean isBorrowed;
     private LocalDate borrowedDate;
     @Column(name = "active")
     private boolean active;
-
-    public boolean isBorrowed() {
-        return isBorrowed;
-    }
     public void setIsBorrowed(boolean isBorrowed) {
         this.isBorrowed = isBorrowed;
-    }
-    public void setisBorrowed(boolean b) {
     }
 }

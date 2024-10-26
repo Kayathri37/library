@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Data
 public class BookRequestDto {
-    private Long bookId; // Match the Book entity field
+    private Long Book_Id; // Match the Book entity field
     private String title;
     private String author;
     private String genre;
@@ -16,14 +16,13 @@ public class BookRequestDto {
 
     public Book toEntity() {
         Book book = new Book();
-        book.setBook_Id(this.bookId);
+        book.setBook_Id(this.Book_Id);
         book.setTitle(this.title);
         book.setAuthor(this.author);
         book.setGenre(this.genre);
-        book.setisBorrowed(this.isBorrowed);
+        book.setIsBorrowed(this.isBorrowed);
         book.setBorrowedDate(this.borrowedDate);
-        book.setActive(true);  // Assuming the book is active by default
+        book.setActive(true);
         return book;
     }
-
 }
